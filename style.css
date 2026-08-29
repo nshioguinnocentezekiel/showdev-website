@@ -247,6 +247,56 @@ section.alt {
   min-height: 180px;
 }
 
+/* ---------- Donate Tabs ---------- */
+
+.donate-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin: 0 0 28px;
+}
+
+.donate-tab-btn {
+  padding: 10px 20px;
+  border-radius: 30px;
+  border: 2px solid var(--purple-dark);
+  background: transparent;
+  color: var(--purple-dark);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.donate-tab-btn.active {
+  background: linear-gradient(135deg, var(--purple-dark), var(--purple-light));
+  color: #fff;
+  border-color: transparent;
+}
+
+.donate-panel {
+  display: none;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.donate-panel.active {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+.donate-panel .card {
+  text-align: center;
+}
+
+.donate-note {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 14px;
+}
+
 /* ---------- Lists ---------- */
 
 .check-list {
@@ -313,7 +363,6 @@ footer .bottom {
   font-size: 0.85em;
   font-style: italic;
 }
-
 /* ---------- Responsive ---------- */
 
 /* ---------- Scroll-reveal animation ---------- */
@@ -342,6 +391,11 @@ footer .bottom {
 
 .donate-btn {
   animation: donatePulse 2.6s ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes donatePulse {
@@ -462,17 +516,25 @@ footer .social-row .social-link {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(59,30,122,0.93), rgba(123,47,190,0.90));
+  background: transparent;
   z-index: -1;
 }
 
-.hero.has-photo h1,
-.hero.has-photo p.tagline {
+.hero.has-photo h1 {
   color: #fff;
 }
 
 .hero.has-photo p.tagline {
-  color: #EAE1F7;
+  color: #F5E9D3;
+}
+
+.hero.has-photo .btn-outline {
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+.hero.has-photo .btn-outline:hover {
+  background: rgba(255,255,255,0.15);
 }
 
 .hero-logo-badge {

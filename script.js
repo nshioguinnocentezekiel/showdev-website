@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
       var key = el.getAttribute('data-bg-key');
       if (window.SHOWDEV_IMAGES[key]) {
         el.style.backgroundImage =
-          "linear-gradient(135deg, rgba(59,30,122,0.93), rgba(123,47,190,0.90)), url('" +
+          "linear-gradient(135deg, rgba(59,30,122,0.55), rgba(123,47,190,0.45)), url('" +
           window.SHOWDEV_IMAGES[key] + "')";
       }
     });
@@ -95,5 +95,29 @@ document.addEventListener('DOMContentLoaded', function () {
   backToTop.addEventListener('click', function () {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
+
+  // ---- Donate tabs (Bank / PayPal / Card & Mobile Money) ----
+  var donateTabs = document.getElementById('donateTabs');
+  if (donateTabs) {
+    var tabButtons = donateTabs.querySelectorAll('.donate-tab-btn');
+    var panels = document.querySelectorAll('.donate-panel');
+
+    tabButtons.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var target = btn.getAttribute('data-tab');
+
+        tabButtons.forEach(function (b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+
+        panels.forEach(function (panel) {
+          if (panel.getAttribute('data-panel') === target) {
+            panel.classList.add('active');
+          } else {
+            panel.classList.remove('active');
+          }
+        });
+      });
+    });
+  }
 
 });
