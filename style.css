@@ -1,0 +1,566 @@
+/* =========================================================
+   SHOWDEV Foundation — Shared Stylesheet
+   Brand colors pulled from logo: deep indigo-purple to violet
+   ========================================================= */
+
+:root {
+  --purple-dark: #3B1E7A;
+  --purple-light: #7B2FBE;
+  --bg: #FFFFFF;
+  --bg-alt: #F7F5FB;
+  --text-main: #2A2A2A;
+  --text-muted: #6B6B6B;
+  --border: #E5E1EE;
+  --max-width: 1100px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--text-main);
+  background: var(--bg);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: Georgia, "Times New Roman", serif;
+  color: var(--purple-dark);
+  line-height: 1.25;
+}
+
+a {
+  color: var(--purple-light);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ---------- Header / Nav ---------- */
+
+header {
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand img {
+  height: 42px;
+  width: auto;
+}
+
+.brand-name {
+  font-family: Georgia, serif;
+  font-weight: bold;
+  font-size: 0.95rem;
+  color: var(--purple-dark);
+  max-width: 220px;
+  line-height: 1.2;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 22px;
+}
+
+nav a {
+  color: var(--text-main);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+nav a:hover {
+  color: var(--purple-light);
+  text-decoration: none;
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  color: var(--purple-dark);
+  cursor: pointer;
+}
+
+.donate-btn {
+  background: linear-gradient(135deg, var(--purple-dark), var(--purple-light));
+  color: #fff !important;
+  padding: 9px 20px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.donate-btn:hover {
+  opacity: 0.9;
+  text-decoration: none;
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  background: var(--bg-alt);
+  padding: 60px 0;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2rem;
+  margin-bottom: 14px;
+}
+
+.hero p.tagline {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  max-width: 620px;
+  margin: 0 auto 26px;
+}
+
+.btn-row {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--purple-dark), var(--purple-light));
+  color: #fff;
+}
+
+.btn-outline {
+  border: 2px solid var(--purple-dark);
+  color: var(--purple-dark);
+}
+
+.btn:hover {
+  opacity: 0.9;
+  text-decoration: none;
+}
+
+/* ---------- Sections ---------- */
+
+section {
+  padding: 56px 0;
+}
+
+section.alt {
+  background: var(--bg-alt);
+}
+
+.section-title {
+  text-align: center;
+  font-size: 1.7rem;
+  margin-bottom: 10px;
+}
+
+.section-sub {
+  text-align: center;
+  color: var(--text-muted);
+  max-width: 640px;
+  margin: 0 auto 36px;
+}
+
+/* ---------- Cards / Grids ---------- */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+.card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 24px;
+}
+
+.card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.photo-placeholder {
+  background: linear-gradient(135deg, var(--purple-dark), var(--purple-light));
+  color: #fff;
+  opacity: 0.85;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 20px;
+  min-height: 180px;
+}
+
+/* ---------- Lists ---------- */
+
+.check-list {
+  list-style: none;
+}
+
+.check-list li {
+  padding-left: 26px;
+  position: relative;
+  margin-bottom: 10px;
+  color: var(--text-main);
+}
+
+.check-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--purple-light);
+  font-weight: bold;
+}
+
+/* ---------- Footer ---------- */
+
+footer {
+  background: var(--purple-dark);
+  color: #EDE7F6;
+  padding: 40px 0 20px;
+  font-size: 0.9rem;
+}
+
+footer .footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+footer h4 {
+  color: #fff;
+  font-size: 1rem;
+  margin-bottom: 12px;
+}
+
+footer a {
+  color: #D9CDEE;
+}
+
+footer .bottom {
+  border-top: 1px solid rgba(255,255,255,0.15);
+  padding-top: 16px;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #C9BBE0;
+}
+
+/* ---------- Placeholder / TODO markers ---------- */
+
+.todo {
+  background: #FFF6E5;
+  border: 1px dashed #D9A441;
+  color: #8A5B00;
+  padding: 3px 8px;
+  border-radius: 5px;
+  font-size: 0.85em;
+  font-style: italic;
+}
+
+/* ---------- Responsive ---------- */
+
+/* ---------- Scroll-reveal animation ---------- */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Respect users who've asked their device to reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ---------- Donate button pulse ---------- */
+
+.donate-btn {
+  animation: donatePulse 2.6s ease-in-out infinite;
+}
+
+@keyframes donatePulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(123, 47, 190, 0.45);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(123, 47, 190, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .donate-btn {
+    animation: none;
+  }
+}
+
+/* ---------- Back-to-top button ---------- */
+
+#backToTop {
+  position: fixed;
+  bottom: 22px;
+  right: 22px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: none;
+  background: linear-gradient(135deg, var(--purple-dark), var(--purple-light));
+  color: #fff;
+  font-size: 1.3rem;
+  line-height: 1;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+  box-shadow: 0 4px 14px rgba(59, 30, 122, 0.35);
+  z-index: 200;
+}
+
+#backToTop.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+#backToTop:hover {
+  opacity: 0.9;
+}
+
+/* ---------- Animated action buttons (Email Us / Call Us) ---------- */
+
+.btn-animated {
+  animation: btnBounce 2.2s ease-in-out infinite;
+}
+
+@keyframes btnBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-animated {
+    animation: none;
+  }
+}
+
+/* Tap feedback on all buttons — small press-down effect */
+.btn:active,
+.donate-btn:active,
+.social-link:active {
+  transform: scale(0.95);
+}
+
+/* ---------- Social media links ---------- */
+
+.social-row {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 30px;
+  border: 2px solid var(--purple-dark);
+  color: var(--purple-dark);
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.social-link:hover {
+  opacity: 0.85;
+  text-decoration: none;
+}
+
+footer .social-row .social-link {
+  border-color: rgba(255,255,255,0.5);
+  color: #fff;
+}
+
+/* ---------- Hero background photography ---------- */
+
+.hero {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  isolation: isolate;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(59,30,122,0.93), rgba(123,47,190,0.90));
+  z-index: -1;
+}
+
+.hero.has-photo h1,
+.hero.has-photo p.tagline {
+  color: #fff;
+}
+
+.hero.has-photo p.tagline {
+  color: #EAE1F7;
+}
+
+.hero-logo-badge {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  background: #fff;
+  padding: 12px;
+  margin: 0 auto 18px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+.hero-logo-badge img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* ---------- Real photo cards (replacing purple placeholders) ---------- */
+
+.photo-card {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  min-height: 180px;
+}
+
+.photo-card img {
+  width: 100%;
+  height: 100%;
+  min-height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.photo-card .photo-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.65), transparent);
+  color: #fff;
+  padding: 26px 14px 10px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.photo-card .swap-badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: #FFF6E5;
+  color: #8A5B00;
+  border: 1px solid #D9A441;
+  font-size: 0.68rem;
+  font-style: italic;
+  padding: 2px 8px;
+  border-radius: 5px;
+}
+
+@media (max-width: 720px) {
+  nav ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--bg);
+    flex-direction: column;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+    display: none;
+    gap: 16px;
+  }
+
+  nav ul.open {
+    display: flex;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .brand-name {
+    font-size: 0.8rem;
+    max-width: 150px;
+  }
+
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+}
